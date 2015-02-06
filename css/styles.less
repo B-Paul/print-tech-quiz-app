@@ -14,47 +14,24 @@ body {
   font-size: 1.75em;
   font-weight: 700;
   color: white;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0;
-  overflow: hidden;
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-
-  &.scheme-1::before,
-  &.scheme-1::after {
+  &.scheme-1 {
     background: @purple;
   }
 
-  &.scheme-2::before,
-  &.scheme-2::after {
+  &.scheme-2 {
     background: @cyan;
   }
 
-  &.scheme-3::before,
-  &.scheme-3::after {
+  &.scheme-3 {
     background: @blue;
   }
 
-  &.scheme-4::before,
-  &.scheme-4::after {
+  &.scheme-4 {
     background: white;
   }
 
-  &.scheme-5::before,
-  &.scheme-5::after {
+  &.scheme-5 {
     background: @red;
   }
 
@@ -66,13 +43,6 @@ body {
   max-width: 20em;
   margin: 0 auto;
   padding: 2em 0;
-  box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: scroll;
   box-sizing: border-box;
 
   button {
@@ -226,7 +196,7 @@ body {
 
 .choice {
   position: relative;
-  transition: color .4s linear;
+  transition: color .2s linear;
 
   &:hover {
     .scheme-1 & {
