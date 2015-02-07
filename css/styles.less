@@ -161,21 +161,40 @@ fieldset {
 
   label {
     cursor: pointer;
-    line-height: 2.5em;
+    line-height: 4rem;
+    transition: all .4s ease;
   }
 
-  .choice-text {
-    margin-left: 3.25em;
+  &.reveal.incorrect {
+    .scheme-1 & {
+      color: @green-muted;
+    }
+    .scheme-2 & {
+      color: @blue-muted;
+    }
+    .scheme-3 & {
+      color: @cyan-muted;
+    }
+    .scheme-4 & {
+      color: @green-muted;
+    }
+    .scheme-5 & {
+      color: @red-muted;
+    }
   }
+}
 
-  .reveal.correct {
-    font-size: 1.1em;
+.choice-text {
+  margin-left: 3.25rem;
+
+  .reveal.correct & {
+    font-size: 1.5em;
   }
 }
 
 .radio {
   position: absolute;
-  top: .25em;
+  top: .06em;
   left: .5em;
 
   input:checked ~ & {
