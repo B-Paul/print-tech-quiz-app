@@ -162,7 +162,7 @@ fieldset {
   label {
     cursor: pointer;
     line-height: 4rem;
-    transition: all .4s ease;
+    transition: all .2s linear;
   }
 
   &.reveal.incorrect {
@@ -303,6 +303,8 @@ fieldset {
   color: black;
   box-shadow: 0 .2rem .25rem rgba(0,0,0,.3);
   z-index: 10;
+  -webkit-animation: material-appear .6s ease; 
+  animation: material-appear .6s ease;
 
   .scheme-1 & {
     background: @purple-muted;
@@ -318,5 +320,26 @@ fieldset {
   }
   .scheme-5 & {
     background: @red-muted;
+  }
+}
+
+@-webkit-keyframes material-appear {
+  from {
+    -webkit-clip-path: circle(0px at 50% 50%);
+            clip-path: circle(0px at 50% 50%);
+  }
+  to {
+    -webkit-clip-path: circle(100% at 50% 50%);
+            clip-path: circle(100% at 50% 50%);
+  }
+}
+@keyframes material-appear {
+  from {
+    -webkit-clip-path: circle(0px at 50% 50%);
+            clip-path: circle(0px at 50% 50%);
+  }
+  to {
+    -webkit-clip-path: circle(100% at 50% 50%);
+            clip-path: circle(100% at 50% 50%);
   }
 }
