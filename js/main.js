@@ -79,8 +79,8 @@ $(document).ready(function () {
       feedback: 'In order to create a full bleed page, most printers must ' +
         'print an image that is slightly larger on all sides than the ' +
         'desired final size of the page. After printing, paper-cutting ' +
-        'equipment may be used to trimmed away the unprinted margins and ' +
-        'just a little bit of the print, leaving a perfect, clean edge.',
+        'equipment may be used to trim away the unprinted margins and just ' +
+        'a little bit of the print, leaving a perfect, clean edge.',
       scheme: 'scheme-5'
     }
   ];
