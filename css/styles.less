@@ -54,9 +54,15 @@ body {
   }
 }
 
+.question-box {
+  position: relative;
+  min-height: 4em;
+}
+
 .question {
   padding-left: 5.5em;
-  position: relative;
+  position: absolute;
+  bottom: 0;
   font-weight: 100;
 
   &::before {
@@ -140,6 +146,7 @@ fieldset {
 .choice {
   position: relative;
   transition: color .2s linear;
+  min-height: 2em;
 
   &:hover {
     .scheme-1 & {
@@ -161,7 +168,7 @@ fieldset {
 
   label {
     cursor: pointer;
-    line-height: 4rem;
+    line-height: 1.4em;
     transition: all .2s linear;
   }
 
@@ -188,7 +195,7 @@ fieldset {
   margin-left: 5.5rem;
 
   .reveal.correct & {
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
 }
 
@@ -238,10 +245,10 @@ fieldset {
   cursor: pointer;
 
   &::before {
-    visibility: hidden;
+    font-size: 0;
   }
 
-  .explanation ~ & {
+  .feedback ~ & {
     font-size: 0;
     width: 4rem;
     height: 4rem;
@@ -251,7 +258,6 @@ fieldset {
     &::before {
       display: block;
       margin-top: 2rem;
-      visibility: visible;
       font-size: 1.5rem;
     }
   }
@@ -293,7 +299,7 @@ fieldset {
   }
 }
 
-.explanation {
+.feedback {
   position: relative;
   font-size: .75em;
   min-height: 5em;
@@ -321,6 +327,16 @@ fieldset {
   .scheme-5 & {
     background: @red-muted;
   }
+
+  &.hidden {
+    display: block;
+    -webkit-animation: material-disappear .6s ease;
+    animation: material-disappear .6s ease;
+  }
+}
+
+.hidden {
+  display: none;
 }
 
 @-webkit-keyframes material-appear {
@@ -341,5 +357,26 @@ fieldset {
   to {
     -webkit-clip-path: circle(100% at 50% 50%);
             clip-path: circle(100% at 50% 50%);
+  }
+}
+
+@-webkit-keyframes material-disappear {
+  from {
+    -webkit-clip-path: circle(100% at 50% 50%);
+            clip-path: circle(100% at 50% 50%);
+  }
+  to {
+    -webkit-clip-path: circle(0px at 50% 50%);
+            clip-path: circle(0px at 50% 50%);
+  }
+}
+@keyframes material-disappear {
+  from {
+    -webkit-clip-path: circle(100% at 50% 50%);
+            clip-path: circle(100% at 50% 50%);
+  }
+  to {
+    -webkit-clip-path: circle(0px at 50% 50%);
+            clip-path: circle(0px at 50% 50%);
   }
 }
